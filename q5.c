@@ -1,19 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    int altura_jose = 150;
-    int altura_pedro = 110;
-    int crescimento_jose = 2;
-    int crescimento_pedro = 3;
-    int anos = 0;
+    int numero, maior, menor;
+    
+    printf("Digite um número (ou zero para sair): ");
+    scanf("%d", &numero);
 
-    while (altura_pedro <= altura_jose) {
-        altura_pedro += crescimento_pedro;
-        altura_jose += crescimento_jose;
-        anos++;
+    maior = menor = numero;
+
+    while (numero != 0) {
+        printf("Digite um número (ou zero para sair): ");
+        scanf("%d", &numero);
+
+        if (numero != 0) {
+            if (numero > maior) {
+                maior = numero;
+            }
+            if (numero < menor) {
+                menor = numero;
+            }
+        }
     }
 
-    printf("Pedro será maior que José em %d anos.\n", anos);
+    printf("O maior número fornecido foi: %d\n", maior);
+    printf("O menor número fornecido foi: %d\n", menor);
 
     return 0;
 }
